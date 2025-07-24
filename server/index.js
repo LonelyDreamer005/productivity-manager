@@ -12,6 +12,9 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
+const taskRoutes = require('./routes/tasks');
+app.use('/api/tasks', taskRoutes);
+
 app.get('/', (req, res) => {
     res.send('Server is running');
 });
